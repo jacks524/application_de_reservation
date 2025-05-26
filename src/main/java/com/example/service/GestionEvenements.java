@@ -3,6 +3,7 @@
  */
 package com.example.service;
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
@@ -26,6 +27,15 @@ public class GestionEvenements {
         objectMapper = new ObjectMapper();
         objectMapper.registerModule(new JavaTimeModule());
         objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
+        /*
+         * objectMapper.activateDefaultTyping(
+         * 
+         * objectMapper.getPolymorphicTypeValidator(),
+         * ObjectMapper.DefaultTyping.OBJECT_AND_NON_CONCRETE,
+         * JsonTypeInfo.As.PROPERTY
+         * 
+         * );
+         */
     }
 
     public static GestionEvenements getInstance() {

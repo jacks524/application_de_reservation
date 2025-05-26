@@ -1,9 +1,9 @@
 {
-  "conf1" : {
-    "id" : "conf1",
+  "Conf0" : {
+    "id" : "Conf0",
     "nom" : "parler",
-    "date" : [ 2025, 5, 26, 18, 7, 34, 695123500 ],
-    "lieu" : "douala",
+    "date" : [ 2025, 5, 26, 18, 41, 35, 417510500 ],
+    "lieu" : "yaounde",
     "nombreParticipants" : 0
   }
 }
