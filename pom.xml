@@ -35,17 +35,21 @@
     <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-databind</artifactId>
-        <version>2.15.0</version> </dependency>
+        <version>2.15.2</version> </dependency>
     <dependency>
         <groupId>com.fasterxml.jackson.datatype</groupId>
         <artifactId>jackson-datatype-jsr310</artifactId>
-        <version>2.15.0</version> </dependency>
+        <version>2.15.2</version> </dependency>
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-annotations</artifactId>
+        <version>2.15.2</version> </dependency>    
     <dependency>
         <groupId>jakarta.xml.bind</groupId>
         <artifactId>jakarta.xml.bind-api</artifactId>
         <version>3.0.1</version>
     </dependency>
-    
+
     <dependency>
         <groupId>org.glassfish.jaxb</groupId>
         <artifactId>jaxb-runtime</artifactId>
@@ -72,7 +76,7 @@
           </execution>
         </executions>
         <configuration>
-          <mainClass>com.example.App</mainClass>
+          <mainClass>com.example.MainApp</mainClass>
           <arguments>
             <argument>--module-path</argument>
             <argument>${javafx.lib.path}</argument>

@@ -7,6 +7,10 @@ public class Participant implements ParticipantObserver {
     String nom;
     String email;
 
+    public Participant() {
+
+    }
+
     public Participant(String id, String nom, String email) {
         this.id = id;
         this.nom = nom;

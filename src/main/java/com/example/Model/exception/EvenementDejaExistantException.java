@@ -5,8 +5,4 @@ public class EvenementDejaExistantException extends Exception {
         super(Message);
     }
 
-    public EvenementDejaExistantException(String Message, Throwable error) {
-        super(Message, error);
-    }
-
 }

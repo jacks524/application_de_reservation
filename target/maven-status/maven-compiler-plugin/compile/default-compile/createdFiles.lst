@@ -1,2 +1,13 @@
+com\example\Model\Organisateur.class
+com\example\Model\Participant.class
 com\example\MainApp.class
+com\example\service\NotificationService.class
+com\example\Model\exception\CapaciteMaxAtteintException.class
+com\example\Model\Concert.class
+com\example\Model\exception\EvenementDejaExistantException.class
+com\example\observer\ParticipantObserver.class
 com\example\service\GestionEvenements.class
+com\example\observer\EvenementObservable.class
+com\example\service\NotificationConsole.class
+com\example\Model\Conference.class
+com\example\Model\Evenement.class

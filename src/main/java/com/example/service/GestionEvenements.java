@@ -13,7 +13,9 @@ import com.example.Model.exception.EvenementDejaExistantException;
 
 public class GestionEvenements {
     private static GestionEvenements instance;
-    Map<String, Evenement> evenements = new HashMap<>();
+    Map<String, Evenement> evenements = new HashMap<>();// garce a ce dictionnaire nous utiliserons la serialisation
+                                                        // afin de creer un fichier json contenant les details de l
+                                                        // evenement
     private ObjectMapper objectMapper;
 
     private GestionEvenements() {
@@ -70,6 +72,10 @@ public class GestionEvenements {
 
     public Map<String, Evenement> getEvenements() {
         return evenements;
+    }
+
+    public void resetEvenements() {
+        evenements.clear();
     }
 
 }

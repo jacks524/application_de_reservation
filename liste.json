@@ -1,0 +1,9 @@
+{
+  "Conf2" : {
+    "id" : "Conf2",
+    "nom" : "Seminaire",
+    "date" : [ 2025, 5, 26, 16, 9, 45, 183156400 ],
+    "lieu" : "Yaounde",
+    "nombreParticipants" : 0
+  }
+}
