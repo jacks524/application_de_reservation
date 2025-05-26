@@ -33,11 +33,13 @@ public abstract class Evenement implements EvenementObservable {
 
     public List<Participant> getParticaipantparEmail(String e) {
         return participants.stream().filter(p -> p.getEmail().endsWith("@" + e)).collect(Collectors.toList());
-    }
+    } // en utilisant les streams et les lambdas expressions nous cherchons les
+      // participants par leurs emails
 
     public long getNombreParticipants() {
         return participants.stream().count();
-    }
+    }// en utilisant les streams nous comptons le nombre de participants pour un
+     // evenement
 
     public boolean ajouterParticiapant(Participant p) throws CapaciteMaxAtteintException {
         if (participants.size() >= capaciteMax) {

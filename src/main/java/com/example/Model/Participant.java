@@ -1,3 +1,6 @@
+/*
+ * Dans cette classe les participants d evenements sont cree
+ */
 package com.example.Model;
 
 import com.example.observer.ParticipantObserver;

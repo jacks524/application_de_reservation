@@ -1,3 +1,6 @@
+/*
+ * Dans cette classe nous administrerons les evenements
+ */
 package com.example.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
