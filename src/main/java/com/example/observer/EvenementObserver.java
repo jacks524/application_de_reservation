@@ -7,12 +7,12 @@ package com.example.observer;
 
 import com.example.Model.Participant;
 
-public interface EvenementObservable {
+public interface EvenementObserver {
 
-    void ajouterEvenementObservable(Participant p);
+    void ajouterEvenementObserver(Participant p);
 
-    void SupprimerEvenementObservable(Participant p);
+    void SupprimerEvenementObserver(Participant p);
 
-    void notifierEvenementObservable(String p);
+    void notifierEvenementObserver(String p);
 
 }

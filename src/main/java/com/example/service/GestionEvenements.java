@@ -3,7 +3,7 @@
  */
 package com.example.service;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
@@ -12,6 +12,8 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.example.Model.Concert;
+import com.example.Model.Conference;
 import com.example.Model.Evenement;
 import com.example.Model.exception.EvenementDejaExistantException;
 
@@ -77,10 +79,36 @@ public class GestionEvenements {
     }
 
     public void chargerEvenementJSON(String path) throws IOException {
-        Map<String, Evenement> ChargerEvenemnt = objectMapper.readValue(new File(path),
-                objectMapper.getTypeFactory().constructMapType(HashMap.class, String.class, Evenement.class));
-        this.evenements = ChargerEvenemnt;
-        System.out.println("Evenement chargé");
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.registerModule(new JavaTimeModule());
+
+        // Lecture brute du JSON
+        Map<String, Map<String, Object>> brut = mapper.readValue(
+                new File(path),
+                new TypeReference<Map<String, Map<String, Object>>>() {
+                });
+
+        evenements.clear();
+
+        for (Map.Entry<String, Map<String, Object>> entry : brut.entrySet()) {
+            String id = entry.getKey();
+            Map<String, Object> props = entry.getValue();
+            String type = (String) props.get("type");
+
+            Evenement e = null;
+
+            if ("concert".equals(type)) {
+                e = mapper.convertValue(props, Concert.class);
+            } else if ("conference".equals(type)) {
+                e = mapper.convertValue(props, Conference.class);
+            }
+
+            if (e != null) {
+                evenements.put(id, e);
+            }
+        }
+
+        System.out.println("Événements chargés avec succès.");
     }
 
     public Map<String, Evenement> getEvenements() {

@@ -8,9 +8,12 @@ import java.time.LocalDateTime;
 public class Concert extends Evenement {
     String artiste;
     String genreMusical;
-
+    private final String type="concert";
     public Concert() {
 
+    }
+    public String getType(){
+        return type;
     }
 
     public Concert(String id, String nom, LocalDateTime date, String lieu, int capaciteMax, String artiste,

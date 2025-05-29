@@ -44,11 +44,11 @@ public class MainApp {
 
                         Conference conf = new Conference(id, nom, LocalDateTime.now(), lieu, capacite, sujet);
                         gestion.ajouterEvenement(conf);
-                        System.out.println("✅ Conférence ajoutée !");
+                        System.out.println(" Conférence ajoutée !");
                         break;
 
                     case 2:
-                        System.out.println("📋 Événements :");
+                        System.out.println(" Événements :");
                         gestion.getEvenements().forEach((k, v) -> {
                             System.out.println("- " + v.getNom() + " (" + v.getId() + ")");
                         });
@@ -64,27 +64,27 @@ public class MainApp {
                         Participant p = new Participant(nomP, nomP, email);
 
                         gestion.rechercherEvenement(idEvt).ajouterParticiapant(p);
-                        System.out.println("✅ Participant ajouté !");
+                        System.out.println(" Participant ajouté !");
                         break;
 
                     case 4:
                         System.out.print("ID à supprimer : ");
                         String idSupp = scanner.nextLine();
                         if (gestion.SupprimerEvenement(idSupp)) {
-                            System.out.println("✅ Événement supprimé.");
+                            System.out.println(" Événement supprimé.");
                         } else {
-                            System.out.println("❌ Événement non trouvé.");
+                            System.out.println(" Événement non trouvé.");
                         }
                         break;
 
                     case 5:
                         gestion.EvenementJSON("liste.json");
-                        System.out.println("✅ Données sauvegardées !");
+                        System.out.println(" Données sauvegardées !");
                         break;
 
                     case 6:
                         gestion.chargerEvenementJSON("liste.json");
-                        System.out.println("✅ Données chargées !");
+                        System.out.println(" Données chargées !");
                         break;
 
                     case 0:
@@ -92,11 +92,11 @@ public class MainApp {
                         break;
 
                     default:
-                        System.out.println("❌ Choix invalide.");
+                        System.out.println(" Choix invalide.");
                         break;
                 }
             } catch (Exception e) {
-                System.out.println("❌ Erreur : " + e.getMessage());
+                System.out.println(" Erreur : " + e.getMessage());
             }
         }
 

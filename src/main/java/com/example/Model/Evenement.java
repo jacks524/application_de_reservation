@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import com.example.Model.exception.CapaciteMaxAtteintException;
-import com.example.observer.EvenementObservable;
+import com.example.observer.EvenementObserver;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 }) // cette configuration fait en sorte que chaque evenement qui sera stocke dans
    // le fichier json pourra etre identifier s il est du type concert ou conference
-public abstract class Evenement implements EvenementObservable {
+public abstract class Evenement implements EvenementObserver {
     protected String id;
     protected String nom;
     protected LocalDateTime date;
@@ -89,7 +89,7 @@ public abstract class Evenement implements EvenementObservable {
     }
 
     @Override
-    public void ajouterEvenementObservable(Participant p) {
+    public void ajouterEvenementObserver(Participant p) {
         if (!participants.contains(p)) {
             participants.add(p);
         }
@@ -97,12 +97,12 @@ public abstract class Evenement implements EvenementObservable {
     }
 
     @Override
-    public void SupprimerEvenementObservable(Participant p) {
+    public void SupprimerEvenementObserver(Participant p) {
         participants.remove(p);
     }
 
     @Override
-    public void notifierEvenementObservable(String message) {
+    public void notifierEvenementObserver(String message) {
         for (Participant p : participants) {
             p.RecevoirMessage(message);
         }

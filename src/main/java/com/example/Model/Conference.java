@@ -1,17 +1,20 @@
 package com.example.Model;
 
-import java.util.List;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
 /*
  * il sagit de la classe Conference qui herite de Evenement cette derniere aura pour but de creer un evenement conference
  */
 public class Conference extends Evenement {
     String theme;
+    private final String type = "conference";
     List<String> intervenants = new ArrayList<>(); // cette liste est celle dans laquelle on retrouvera les intervenants
                                                    // de notre conference
-
+    public String getType(){
+        return type;
+    }
     public Conference() {
 
     }

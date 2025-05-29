@@ -1,9 +1,10 @@
 {
-  "Conf0" : {
-    "id" : "Conf0",
-    "nom" : "parler",
-    "date" : [ 2025, 5, 26, 18, 41, 35, 417510500 ],
-    "lieu" : "yaounde",
+  "Conf2" : {
+    "id" : "Conf2",
+    "nom" : "Seminaire",
+    "date" : [ 2025, 5, 29, 23, 5, 39, 141150200 ],
+    "lieu" : "Yaounde",
+    "type" : "conference",
     "nombreParticipants" : 0
   }
 }

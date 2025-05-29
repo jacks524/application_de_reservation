@@ -1,11 +1,11 @@
 -------------------------------------------------------------------------------
 Test set: com.example.tests.SerialisationTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.228 s <<< FAILURE! -- in com.example.tests.SerialisationTest
-com.example.tests.SerialisationTest.test_de_serialisation -- Time elapsed: 0.221 s <<< FAILURE!
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.393 s <<< FAILURE! -- in com.example.tests.SerialisationTest
+com.example.tests.SerialisationTest.test_de_serialisation -- Time elapsed: 0.326 s <<< FAILURE!
 java.lang.AssertionError: 
-il y a eu erreurCould not resolve subtype of [simple type, class com.example.Model.Evenement]: missing type id property 'type'
- at [Source: (File); line: 8, column: 3] (through reference chain: java.util.HashMap["Conf2"])
+il y a eu erreurUnrecognized field "nombreParticipants" (class com.example.Model.Conference), not marked as ignorable (5 known properties: "type", "id", "nom", "lieu", "date"])
+ at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: com.example.Model.Conference["nombreParticipants"])
 	at org.junit.Assert.fail(Assert.java:89)
 	at com.example.tests.SerialisationTest.test_de_serialisation(SerialisationTest.java:38)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
